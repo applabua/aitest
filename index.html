@@ -296,7 +296,7 @@
 
   /* small utility buttons - square small icons */
   .icon-square{
-    width:38px;height:38px;display:inline-grid;place-items:center;border-radius:8px;border:0;cursor:pointer;font-size:14px;
+    width:30px;height:30px;display:inline-grid;place-items:center;border-radius:8px;border:0;cursor:pointer;font-size:14px;
     box-shadow: 0 8px 20px rgba(2,6,23,0.45);
   }
   /* play same gradient as send */
@@ -304,12 +304,6 @@
     background: linear-gradient(90deg,var(--accent),var(--accent-2));
     color:#041224;
   }
-  /* clear mirrored gradient */
-  .icon-clear{
-    background: linear-gradient(90deg,var(--accent-2),var(--accent));
-    color:#041224;
-  }
-
   /* responsive */
   @media (max-width:880px){
     .card{ grid-template-columns: 1fr; height:92vh; max-height:92vh; }
@@ -376,7 +370,6 @@
         </div>
 
         <div style="display:flex;gap:8px;align-items:center">
-          <button class="icon-square icon-clear" id="clearBtn" title="Очистить чат" aria-label="Очистить чат">🗑</button>
           <button class="icon-square icon-play" id="ttsBtn" title="Воспроизвести последний ответ" aria-label="Воспроизвести последний ответ">▶</button>
         </div>
       </div>
