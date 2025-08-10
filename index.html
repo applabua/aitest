@@ -84,6 +84,7 @@
     justify-content:center;
     z-index:9999;
     background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    transition: opacity 0.45s ease, visibility 0.45s;
   }
   /* make preloader look like dialog window background with neon logo */
   #preloader-inner{
@@ -214,6 +215,7 @@
     opacity:0;
     transform:translateY(8px) scale(0.995);
     animation: appear .38s ease forwards;
+    position: relative;
   }
   @keyframes appear { to{opacity:1; transform:none;} }
 
@@ -239,7 +241,15 @@
   .msg:hover{ box-shadow: 0 18px 40px rgba(2,6,23,0.6), 0 0 18px rgba(107,231,255,0.03) inset; transform:translateY(-2px); transition:all .22s ease; }
 
   /* small meta row */
-  .meta{ font-size:11px;color:rgba(255,255,255,0.35); margin-top:6px; display:flex;gap:8px; align-items:center; justify-content:flex-end;}
+  .meta{ 
+    font-size:11px;
+    color:rgba(255,255,255,0.35); 
+    margin-top:6px; 
+    display:flex;gap:8px; 
+    align-items:center; 
+    justify-content:flex-end;
+    user-select:none;
+  }
 
   /* typing indicator */
   .typing{
@@ -401,7 +411,6 @@ const preloader = document.getElementById('preloader');
 window.addEventListener('load', ()=> {
   // keep for exactly 5s from script run (gives consistent behavior)
   setTimeout(()=> {
-    preloader.style.transition = 'opacity .45s ease, visibility .45s';
     preloader.style.opacity = '0';
     preloader.style.visibility = 'hidden';
     preloader.setAttribute('aria-hidden','true');
