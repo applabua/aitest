@@ -374,7 +374,7 @@
       <div class="messages" id="messages" aria-live="polite" aria-atomic="false">
         <!-- initial welcome message -->
         <div class="msg ai" data-id="m0">
-          Привет! Я — тестовый AI Assistant. Могу помочь с кодом, идеями, планами и быстрыми ответами. Попробуй написать что-нибудь.
+          Привет! Я — тестовый AI Assistant. Могу помочь с , идеями, планами и быстрыми ответами. Попробуй написать что-нибудь.
           <div class="meta">Помощник • сейчас</div>
         </div>
       </div>
@@ -467,7 +467,7 @@ function generateReply(raw){
 
   // greetings
   if(/^(прив|здрав|hi|hello|добрый)/i.test(low)) {
-    return "Привет! Чем конкретно помочь? Например: «Напиши HTML-шаблон для лендинга», «Покажи пример кода на Python», «Составь план проекта» — и я сделаю это пошагово.";
+    return "Привет! Я тестовый ИИ ассистент , мой разработчик должен обучить меня для полноценной работы) Чем могу помочь?";
   }
 
   // simple direct Q&A patterns
@@ -501,9 +501,7 @@ function generateReply(raw){
 
   // default — constructive multi-part reply
   const generic = [
-    "Разбивай задачу на шаги: 1) понять; 2) спроектировать; 3) реализовать; 4) протестировать.",
-    "Если хочешь — пришли пример входных данных и ожидаемый результат, я напишу рабочий пример кода.",
-    "Могу подготовить README, пример развертывания и тесты — напиши, что нужно."
+ "Чем могу помочь?"
   ];
   const pick = generic[Math.floor(Math.random()*generic.length)];
   return pick;
@@ -609,7 +607,7 @@ inputEl.focus();
 // helpful welcome (only once)
 if(!localStorage.getItem('neon_visited')){
   localStorage.setItem('neon_visited','1');
-  appendMessage("Совет: нажмите Enter для отправки. Нужен экспорт в файл? Напишите «скачай html» — сгенерирую.", 'ai');
+  appendMessage("Я пока что не обучаюсь и не запоминаю, но мои разработчики работают над этим.", 'ai');
 }
 
 // auto-scroll observer
